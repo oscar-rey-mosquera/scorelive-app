@@ -20,6 +20,7 @@ export  function useHttpState<T>(process : Array<() => Promise<void | T>>) {
 
 
     return {
-         loading
+         loading,
+        http
     }
 }

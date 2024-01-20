@@ -12,7 +12,7 @@ import {useLiveSoccerStore} from "@/src/matches/stores/liveSoccerStore";
 
 export function Header() {
     const {query, setHttpQuery} = useHttpQueryStore(state => state)
-    const {toggleOpen} = useLiveSoccerModalStore()
+    const {toggle} = useLiveSoccerModalStore()
 
     const { liveMatchesCount } = useLiveSoccerStore()
 
@@ -28,7 +28,7 @@ export function Header() {
                             <PrimaryText styleClass="text-2xl font-medium pink-color">live</PrimaryText>
                         </Row>
                         <If condition={selectedSportCategory === 'soccer'}>
-                            <TouchableOpacity onPress={toggleOpen}>
+                            <TouchableOpacity onPress={toggle}>
                                 <Row styleClass="onlive-bg px-2 py-1 rounded-md">
                                     <Text>{i18n.t('live')} ({liveMatchesCount.value})</Text>
                                 </Row>

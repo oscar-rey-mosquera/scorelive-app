@@ -54,6 +54,11 @@ export class League {
         }
     }
 
+    public hasMatchesInLive() : boolean  {
+
+        return this.matches.value.some(e => e.isPlaying())
+    }
+
     public toJSON() {
 
         return {

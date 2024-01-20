@@ -9,4 +9,14 @@ export class NumberVO {
 
         return new NumberVO(value ?? 0)
     }
+
+    public equals(value: NumberVO) {
+
+        return this.value === value.value
+    }
+
+    public lessThan(value: NumberVO) {
+
+        return this.value < value.value
+    }
 }

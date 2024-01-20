@@ -1,7 +1,10 @@
-import {Card, Col, PrimaryText, Row, SecondaryText} from "@/src/shared/components";
-import {Image, TouchableOpacity, ViewProps} from "react-native";
+import {Card, Col, PrimaryText, Row, SecondaryText, If} from "@/src/shared/components";
+import {Image, Text, TouchableOpacity, ViewProps} from "react-native";
 import {League, Matche} from "@/src/shared/models";
 import {Skeleton} from "@/src/shared/components/Skeleton";
+import {router} from "expo-router";
+import {useLiveSoccerModalStore} from "@/src/matches/stores/liveSoccerModalStore";
+
 
 
 interface SectionHeaderProps extends ViewProps {
@@ -61,13 +64,33 @@ export function LoadingSectionItem() {
 
 
 export function SectionItems({matche, styleClass}: SectionItemProps) {
+
+    const {close} = useLiveSoccerModalStore()
+
+    function onPress() {
+        close()
+        router.push('/main/stacks/matches-detail')
+    }
+
     return (
-        <TouchableOpacity onPress={() => console.log(matche.id.value)}>
+        <TouchableOpacity onPress={() =>  onPress()}>
             <Card styleClass={`py-3 px-4 rounded mt-2 ${styleClass}`}>
                 <Row>
                     <Col styleClass="justify-center align-center items-center mr-3">
-                        <SecondaryText>FT</SecondaryText>
-                        <SecondaryText>{matche.date.getDay()}/{matche.date.getMonth()}</SecondaryText>
+                        <If condition={matche.isToStart() || matche.isFinished()}>
+                            <SecondaryText>FT</SecondaryText>
+                            <SecondaryText>{matche.date.getDay()}/{matche.date.getMonth()}</SecondaryText>
+                        </If>
+                        <If condition={matche.isBreak()}>
+                            <Row styleClass="onlive-bg px-2 py-1 rounded-md">
+                                <Text>DES</Text>
+                            </Row>
+                        </If>
+                        <If condition={matche.hasTime()}>
+                            <Row styleClass="onlive-bg px-2 py-1 rounded-md">
+                                <Text>{matche.time?.value}'</Text>
+                            </Row>
+                        </If>
                     </Col>
                     <Col styleClass="flex-1">
                         <Row styleClass="justify-between mb-2">

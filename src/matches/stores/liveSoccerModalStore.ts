@@ -7,8 +7,9 @@ export interface LiveSoccerModalStateInterface {
 }
 
 export interface HttpQueryStoreInterface extends LiveSoccerModalStateInterface {
-    toggleOpen: () => void,
-    reset : () => void
+    toggle: () => void,
+    reset : () => void,
+    close : () => void
 }
 
 const initialState: LiveSoccerModalStateInterface = {
@@ -17,8 +18,9 @@ const initialState: LiveSoccerModalStateInterface = {
 
 export const useLiveSoccerModalStore = create<HttpQueryStoreInterface>((set, get) => ({
     ...initialState,
-    toggleOpen: () => set({open : !get().open}),
-    reset : () => set({...initialState})
+    toggle: () => set({open : !get().open}),
+    reset : () => set({...initialState}),
+    close : () => set({open : false})
 }))
 
 

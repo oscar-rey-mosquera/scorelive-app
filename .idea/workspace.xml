@@ -6,20 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1f801a6b-76c2-49db-a4f2-d3ec664ef269" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(tabs)/two.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/[...missing].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/[...missing].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/Colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/Colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matches/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/matches/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matches/components/LiveSoccerModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/matches/components/LiveSoccerModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matches/components/SectionItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/matches/components/SectionItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matches/repositories/liveMatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/matches/repositories/liveMatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/matches/stores/liveSoccerModalStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/matches/stores/liveSoccerModalStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Background.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Background.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/hooks/useHttpState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/hooks/useHttpState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/languages/es.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/languages/es.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/models/league.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/league.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/models/matche.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/matche.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/models/numberVO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/numberVO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/models/stringVO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/models/stringVO.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +95,7 @@
       <workItem from="1705509231286" duration="38750000" />
       <workItem from="1705587007686" duration="21969000" />
       <workItem from="1705683156632" duration="18147000" />
+      <workItem from="1705770027809" duration="15781000" />
     </task>
     <servers />
   </component>

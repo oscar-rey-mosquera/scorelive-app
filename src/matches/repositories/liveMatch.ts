@@ -122,11 +122,12 @@ class Adapter {
                 matcheId: IdVO.new(response.id),
                 year: StringVO.new(response.y),
                 date: DateVO.new(`${response.full_date} ${response.ld}`, "DD/MM/YYYY HH:mm"),
-                status: StringVO.new(response.s ? response.s.toString() : "-1"),
+                status: StringVO.new(response.s.toString()),
                 marker: response.r ? StringVO.new(response.r) : StringVO.new('0 - 0'),
                 teamOne,
                 teamTwo,
                 winningTeam: response.w ? response.w === 1 ? teamOne : teamTwo : null,
+                time : response.lmin ? NumberVO.new(Number.parseInt(response.lmin)) : null
             }
         )
     }

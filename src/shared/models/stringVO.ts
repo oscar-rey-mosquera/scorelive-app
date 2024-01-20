@@ -1,4 +1,5 @@
 import {ArrayVO} from "@/src/shared/models/arrayVO";
+import {NumberVO} from "@/src/shared/models/numberVO";
 
 export class StringVO {
 
@@ -23,6 +24,15 @@ export class StringVO {
     public includes(value: string) {
 
         return this.value.includes(value)
+    }
+
+    public equals(value: StringVO) {
+
+        return this.value === value.value
+    }
+
+    public parseInt() {
+        return NumberVO.new(Number.parseInt(this.value))
     }
 
 

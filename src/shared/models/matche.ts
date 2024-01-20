@@ -2,6 +2,7 @@ import {StringVO} from "@/src/shared/models/stringVO";
 import {IdVO} from "@/src/shared/models/idVO";
 import {Team} from "@/src/shared/models/team";
 import {DateVO} from "@/src/shared/models/dateVO";
+import {NumberVO} from "@/src/shared/models/numberVO";
 
 export class Matche {
 
@@ -15,6 +16,7 @@ export class Matche {
     public maker : StringVO
     public matcheId : IdVO
     public marker : StringVO
+    public time : NumberVO|null
 
     constructor({
                     matcheId = IdVO.new(),
@@ -24,7 +26,8 @@ export class Matche {
                     year = StringVO.new(),
                     date = DateVO.new(),
                     status = StringVO.new(),
-                    marker = StringVO.new()
+                    marker = StringVO.new(),
+                    time = null
                 } : {
                     matcheId?: IdVO,
                     teamOne?: Team,
@@ -33,7 +36,8 @@ export class Matche {
                     year?: StringVO,
                     date?: DateVO,
                     status?: StringVO,
-                    marker?: StringVO
+                    marker?: StringVO,
+                    time?: NumberVO | null
                 }
                 ) {
 
@@ -45,6 +49,7 @@ export class Matche {
         this.status = status
         this.marker = marker
         this.matcheId = matcheId
+        this.time = time
     }
 
     public toJSON() {
@@ -60,6 +65,35 @@ export class Matche {
             maker: this.maker.value
         }
     }
+
+    public isFinished() {
+
+        return this.status.parseInt().equals(NumberVO.new(1))
+    }
+
+    public isBreak() {
+        return this.status.parseInt().equals(NumberVO.new(5))
+    }
+
+    public isPlaying() {
+
+        return this.isBreak() || this.status.parseInt().equals(NumberVO.new(0))
+    }
+
+    public hasTime() {
+
+        return this.time !== null
+    }
+
+    public isToStart() {
+        return this.status.parseInt().lessThan(NumberVO.new(0)) || this.isPostponed()
+    }
+
+    public isPostponed() {
+        return this.status.parseInt().equals(NumberVO.new(2))
+    }
+
+
 
     public getTeamOneMarker()  {
         let marker = this.marker.removeSpace().split('-').first()
